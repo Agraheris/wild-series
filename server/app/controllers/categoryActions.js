@@ -1,3 +1,4 @@
+const tables = require("../../database/tables");
 // Some data to make the trick
 
 const { read } = require("./itemActions");
@@ -14,6 +15,13 @@ const categories = [
   ];
   
   // Declare the actions
+  const browse = async (req, res) => {
+    const categoriesFromDB = await tables.category.readAll();
+    
+    res.json(categoriesFromDB);
+  };
+    
+
   
   const category = (req, res) => {
     if (req.query.q != null) {
@@ -42,4 +50,4 @@ const categories = [
   
   // Export them to import them somewhere else
   
-  module.exports = { category, readCategories, read};
+  module.exports = { category, readCategories, read, browse};
