@@ -12,6 +12,10 @@ const categories = [
       id: 2,
       name: "Comédie",
     },
+    {
+      id: 3,
+      name: "Médical",
+    },
   ];
   
   // Declare the actions
